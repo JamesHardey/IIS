@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/staff.css">
+</head>
+<body>
+    <aside class="side-bar">
+        <div class="side-bar-logo">
+            <h1>FUL IIS</h1>
+        </div>
+        <div class="staff_nav_top">
+          <ul class="staff_nav_link">
+            <li>
+              <a href="">Create Test</a>
+            </li>
+
+            <li>
+              <a href="">Update Test</a>
+            </li>
+
+            <li>
+              <a href="">Delete Test</a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="staff_nav_divider"></div>
+
+        <div class="staff_nav_bottom">
+          <ul>
+            <li>
+              <a href="">Result</a>
+            </li>
+          </ul>
+
+          <div class="btn-container">
+            <a href="" class="btn">Logout</a>
+          </div>
+        </div>
+            
+    </aside>
+
+    <main class="main_page">
+      <div class="main_page_section">
+          <div class="main-page-body">
+            <h2>CREATE TEST</h2>
+            <form action="">
+              <div class="field-input">
+                <div class="spacer-20"></div>
+                <input type="text" name="exam" id="exam" placeholder="Exam Name">
+                <input type="number" name="time" id="time" placeholder="Time Limit in Minutes" min="300" max="1800">
+                <input type="submit" value="Create Test" class="btn">
+              </div>
+            </form>
+            
+          </div>
+      </div>
+
+      <div class="update_section remove">
+        <div class="update-page-body">
+          <h2>UPDATE TEST</h2>
+          <form action="">
+            <div class="field-input">
+              <div class="spacer-20"></div>
+              <input type="text" name="exam" id="exam" placeholder="Exam Name">
+              <input type="number" name="time" id="time" placeholder="Time Limit in Minutes" min="300" max="1800">
+              <input type="submit" value="Create Test" class="btn">
+            </div>
+          </form>
+        </div>
+    </div>
+    </main>
+</body>
+</html>

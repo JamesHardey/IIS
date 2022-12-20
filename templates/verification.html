@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/verify.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+</head>
+
+<body>
+    <header>
+        <h1>FULokoja IIS</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href="/login">Login</a>
+                </li>
+
+                <li>
+                    <a href="/contact-us">Contact-us</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+
+    <div class="main">
+        <div>
+            <p>Please verify your Identity </p>
+            <p class="mat-no">{{id}}</p>
+        </div>
+        <div class="image" id="image-cont">
+            <video id="stream" width="370" height="320">
+                <canvas id="capture" width="370" height="320">
+                </canvas>
+            </video>
+        </div>
+        <div id="snapshot"></div>
+
+        <div>
+            <form action="" method="POST">
+                <input type="hidden" id="image_hidden" name="image_hidden">
+
+                <div class="butn">
+                    <a id="btn-capture">Capture</a>
+                </div>
+
+                <input type="submit" value="Verify" id="verify_btn">
+            </form>
+            {% if error %}
+            <div>
+                <p>Error: {{error}}</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script>
+        var btnCapture = document.getElementById("btn-capture");
+
+        var stream = document.getElementById("stream");
+        var capture = document.getElementById("capture");
+    
+        var verifyBtn = document.getElementById("verify_btn");
+        var snapshot = document.getElementById("snapshot");
+        var imageContainer = document.getElementById("image-cont")
+        var cameraStream = null;
+
+        btnCapture.addEventListener("click", captureSnapshot);
+
+        function startStreaming() {
+            verifyBtn.style.visibility = "hidden"
+            var mediaSupport = 'mediaDevices' in navigator;
+
+            if (mediaSupport && null == cameraStream) {
+
+                navigator.mediaDevices.getUserMedia({ video: true })
+                    .then(function (mediaStream) {
+
+                        cameraStream = mediaStream;
+
+                        stream.srcObject = mediaStream;
+
+                        stream.play();
+                    })
+                    .catch(function (err) {
+
+                        console.log("Unable to access camera: " + err);
+                    });
+            }
+            else {
+
+                alert('Your browser does not support media devices.');
+
+                return;
+            }
+        }
+
+        function captureSnapshot() {
+
+            if (null != cameraStream) {
+
+                var ctx = capture.getContext('2d');
+                var img = new Image();
+
+                ctx.drawImage(stream, 0, 0, capture.width, capture.height);
+
+                img.src = capture.toDataURL("image/png");
+                img.width = 370;
+                img.height = 320;
+                console.log(capture.toDataURL("image/png"));
+                snapshot.innerHTML = '';
+
+                snapshot.appendChild(img);
+                var d1 = capture.toDataURL("image/png");
+                var res = d1.replace("data:image/png;base64,", "");
+                console.log(res);
+                snapshot.innerHTML = '';
+                imageContainer.style.display="none";
+                snapshot.appendChild(img);
+                verifyBtn.style.visibility = "visible";
+                btnCapture.style.display = "none";
+                $("#image_hidden").val(res);
+                
+                cameraStream = null;
+                
+
+            }
+        }
+        window.onload = function () {
+            startStreaming();
+            captureSnapshot();
+        }
+    </script>
+</body>
+
+</html>

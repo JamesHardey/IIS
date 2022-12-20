@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FUL IIS</title>
+    <!-- <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/student.css"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/student.css') }}">
+</head>
+<body>
+    <aside class="side-bar">
+        <div class="side-bar-logo">
+            <h1>FUL IIS</h1>
+        </div>
+        <div class="staff_nav_top">
+          <ul class="staff_nav_link">
+            <li>
+              <a href="/take-test">Take Test</a>
+            </li>
+            <li>
+                <a href="/exam-history">Exam History</a>
+              </li>
+
+          </ul>
+        </div>
+
+        <div class="staff_nav_divider"></div>
+
+        <div class="staff_nav_bottom">
+          <ul>
+            <li>
+              <a href="">Result</a>
+            </li>
+          </ul>
+
+          <div class="btn-container">
+            <a href="" class="btn">Logout</a>
+          </div>
+        </div>
+            
+    </aside>
+    
+    <main>
+        <div class="header-container">
+          <p>Welcome to the Federal University Lokoja Intelligent Invigilation System</p>
+        </div>
+
+        <div>
+          <p class="md-s">Available Tests to Take</p>
+
+          <form action="" class="avail-test" method="POST">
+
+            <div class="sub-cont">
+              <input type="radio" name="test-type" id="" value="a">
+              <label for="a">English</label>
+            </div>
+
+            <div class="sub-cont">
+                <input type="radio" name="test-type" id="" value="b">
+                <label for="b">Mathematics</label>
+            </div>
+
+            <div class="sub-cont">
+                <input type="radio" name="test-type" id="" value="c">
+                <label for="c">Yoruba</label>
+            </div>
+
+            <div class="sub-cont">
+                <input type="radio" name="test-type" id="" value="d">
+                <label for="d">French</label>
+            </div>
+
+            <input type="submit" value="Start Test">
+          </form>
+        </div>
+        
+    </main>
+    
+</body>
+</html>

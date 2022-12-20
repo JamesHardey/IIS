@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examination</title>
+    <!-- <link rel="stylesheet" href="css/question.css"> -->
+    <script src="/static/js/jquery-3.6.1.min.js"></script> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/question.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/snackbar.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/component.css') }}">
+</head>
+
+<body>
+    <aside class="question-side-bar">
+        <div class="box">
+
+            <div>
+                <h2>FUL IIS</h2>
+                <h3>Test</h3>
+            </div>
+
+            <div class="image-box">
+                <img src='/static/images/cscDataPics/{{img_url}}' alt="" width="150" height="150">
+            </div>
+
+            <div class="box-content flex-column gap-20">
+                <p class="txt-normal" id="stud_id">{{id.upper()}}</p>
+                <p>English Language</p>
+            </div>
+
+            <div class="margin-top-40">
+                <p class="timer" id="time">00:00</p>
+            </div>
+
+            <div class="margin-top-40">
+                <button class="btn end-test">End-test</button>
+            </div>
+
+            <div class="form-group" >
+                <div class="container" id="videocheck" style="display: none;">
+                  <div class="justify-content-center align-items-center">
+                    <video id="stream" width="320" height="320">
+                      <canvas id="capture" width="320" height="320"></canvas>
+                    </video>
+                  </div>
+                </div>
+              </div>
+            
+
+            <div></div>
+
+        </div>
+    </aside>
+
+    <main class="main-page">
+        
+        <div class="main-content closes">
+            <header class="top-question-header flex space-btw">
+                <div class="exam-name">
+                    <p id="topic">English Language</p>
+                </div>
+    
+                <div>
+                    <p id="curr-questn">Question 1 of 20</p>
+                </div>
+                
+                <div>
+                    <div>
+                        <button class="btn end-test">Quit</button>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="body">
+                <div class="question-body">
+                    <div class="quest-cover">
+                        <div class="questns" id="quest">
+                            
+                        </div>
+    
+    
+                        <form action="" class="answers">
+                            <div>
+                                <input type="radio" name="question-option" id="option-a" value="a">
+                                <label for="option-a" id="label-a"></label>
+                            </div>
+    
+                            <div>
+                                <input type="radio" name="question-option" id="option-b" value="b">
+                                <label for="b" id="label-b"></label>
+                            </div>
+    
+                            <div>
+                                <input type="radio" name="question-option" id="option-c" value="c">
+                                <label for="c" id="label-c"></label>
+                            </div>
+    
+                            <div>
+                                <input type="radio" name="question-option" id="option-d" value="d">
+                                <label for="d" id="label-d"></label>
+                            </div>
+    
+                        </form>
+                    </div>
+    
+    
+                </div>
+                <div>
+                    <div class="mid-body">
+                        <button id="prev">Previous</button>
+                        <button id="next">Next</button>
+                    </div>
+    
+    
+    
+                    <div class="bottom-bar">
+                        <p style="color: #fff; margin-right: 20px;">Question</p>
+                        {% for i in range(n) %}
+                        <div class="question-no">
+                            {{i+1}}
+                        </div>
+                        {% endfor %}
+                        
+                    </div>
+    
+                </div>
+    
+    
+            </div>
+        </div>
+
+        <div class="open-body">
+            <div style="height:100%; display:flex; align-items: center;">
+                <div>
+                    <p class="par" style="font-size: 22px;"><strong>Read this Instruction below</strong> </p>
+                    <br>
+                    <p class="par" style="font-size: 18px;">Please note that impersonation is not allowed during the exam</p>
+                    <br>
+                    <p class="par" style="font-size: 18px;">Avoid Jiraffing during the exam</p>
+                    <br>
+                    <p class="par" style="font-size: 18px;">Your face must at all time be exerted on the screen, multiple head movement could lead to exiting the exam for you</p>
+                    <br>
+                    <p class="par" style="font-size: 18px;">Click End test at the end of the test</p>
+                    <br>
+                    <br>
+                    <button id="pro-btn" style="font-size: 18px; padding: 7px 15px; background-color: blue; color: #fff;">Proceed to the Exam</button>
+                </div>
+                
+            </div>
+        </div>
+
+        <div id="snackbar">Cheating detected!!! Please avoid head movement </div>
+    </main>
+
+
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Some text in the Modal..</p>
+        </div>
+    </div>
+
+    <div id="id01" class="modal">
+        <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+        <form class="modal-content" action="/action_page.php">
+          <div class="container">
+            <h1>End Exam</h1>
+            <p>Are you sure you want to end Exam?</p>
+      
+            <div class="clearfix">
+              <button type="button" class="button cancelbtn">Ok</button>
+              <button type="button" class="button deletebtn">Delete</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+    <script src="/static/js/questions.js"></script>
+    <script src="/static/js/script.js"></script>
+    <script src="/static/js/snackbar.js"></script>
+    <script src="/static/js/component.js"></script>
+
+</body>
+
+</html>

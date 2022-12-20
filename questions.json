@@ -1,0 +1,166 @@
+{"questions":
+			[
+				{
+					"question":"Which of the following is not a keyword in java?",
+					"A":"static",
+					"B":"Main",
+					"C":"void",
+					"D":"private",
+					"answer":"B"
+				},
+				{
+					"question":"What is the default value of String variable?",
+					"A":".",
+					"B":"a",
+					"C":"null",
+					"D":"not defined",
+					"answer":"C"
+				},
+				{
+					"question":"What is instance variable?",
+					"A":"Instance variables are static variables within a class but outside any method.",
+					"B":"Instance variables are variables defined inside methods, constructors or blocks.",
+					"C":"Instance variables are variables within a class but outside any method.",
+					"D":"None of the above.",
+					"answer":"C"
+				},
+				{
+					"question":"Static binding uses which information for binding?",
+					"A":"type",
+					"B":"object.",
+					"C":"Both of the above.",
+					"D":"None of the above.",
+					"answer":""
+				},
+				{
+					"question":"Which is the way in which a thread can enter the waiting state?",
+					"A":"Invoke its sleep() method.",
+					"B":"Invoke object's wait method.",
+					"C":"Invoke its suspend() method.",
+					"D":"All of the above.",
+					"answer":"D"
+				},
+				{
+					"question":"Which of the following option leads to the portability and security of Java?",
+					"A":"Bytecode is executed by JVM",
+					"B":"The applet makes the Java code secure and portable",
+					"C":"Use of exception handling",
+					"D":"Dynamic binding between objects",
+					"answer":"A"
+				},
+				{
+					"question":"Which of the following is not a Java features?",
+					"A":"Dynamic",
+					"B":"Architecture Neutral",
+					"C":"Use of pointers",
+					"D":"Object-oriented",
+					"answer":"C"
+				},
+				{
+					"question":"Which of the following is a valid declaration of a char?",
+					"A":"char cc = 'itea';",
+					"B":"char ch = 'utea';",
+					"C":"char ca = 'tea';",
+					"D":"char cr = u0223;",
+					"answer":"B"
+				},
+				{
+					"question":"Which of the following is not a keyword in java?",
+					"A":"static",
+					"B":"Main",
+					"C":"void",
+					"D":"private",
+					"answer":"B"
+				},
+				{
+					"question":"What is the default value of String variable?",
+					"A":".",
+					"B":"a",
+					"C":"null",
+					"D":"not defined",
+					"answer":"C"
+				},
+				{
+					"question":"What is instance variable?",
+					"A":"Instance variables are static variables within a class but outside any method.",
+					"B":"Instance variables are variables defined inside methods, constructors or blocks.",
+					"C":"Instance variables are variables within a class but outside any method.",
+					"D":"None of the above.",
+					"answer":"C"
+				},
+				{
+					"question":"Static binding uses which information for binding?",
+					"A":"type",
+					"B":"object.",
+					"C":"Both of the above.",
+					"D":"None of the above.",
+					"answer":""
+				},
+				{
+					"question":"Which is the way in which a thread can enter the waiting state?",
+					"A":"Invoke its sleep() method.",
+					"B":"Invoke object's wait method.",
+					"C":"Invoke its suspend() method.",
+					"D":"All of the above.",
+					"answer":"D"
+				},
+				{
+					"question":"Which of the following option leads to the portability and security of Java?",
+					"A":"Bytecode is executed by JVM",
+					"B":"The applet makes the Java code secure and portable",
+					"C":"Use of exception handling",
+					"D":"Dynamic binding between objects",
+					"answer":"A"
+				},
+				{
+					"question":"Which of the following is not a Java features?",
+					"A":"Dynamic",
+					"B":"Architecture Neutral",
+					"C":"Use of pointers",
+					"D":"Object-oriented",
+					"answer":"C"
+				},
+				{
+					"question":"Which of the following is a valid declaration of a char?",
+					"A":"char cc = 'itea';",
+					"B":"char ch = 'utea';",
+					"C":"char ca = 'tea';",
+					"D":"char cr = u0223;",
+					"answer":"B"
+				},
+				{
+					"question":"Which of the following is not a keyword in java?",
+					"A":"static",
+					"B":"Main",
+					"C":"void",
+					"D":"private",
+					"answer":"B"
+				},
+				{
+					"question":"What is the default value of String variable?",
+					"A":".",
+					"B":"a",
+					"C":"null",
+					"D":"not defined",
+					"answer":"C"
+				},
+				{
+					"question":"What is instance variable?",
+					"A":"Instance variables are static variables within a class but outside any method.",
+					"B":"Instance variables are variables defined inside methods, constructors or blocks.",
+					"C":"Instance variables are variables within a class but outside any method.",
+					"D":"None of the above.",
+					"answer":"C"
+				},
+				{
+					"question":"Static binding uses which information for binding?",
+					"A":"type",
+					"B":"object.",
+					"C":"Both of the above.",
+					"D":"None of the above.",
+					"answer":""
+				}
+
+			]
+	
+}
